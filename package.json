@@ -1,0 +1,15 @@
+{
+  "name": "read-in-future",
+  "version": "0.0.1",
+  "description": "A simple way of adding URLs or simple notes for future seeing",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/cirocosta/read-in-future-ce"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-cssmin": "~0.7.0"
+  }
+}

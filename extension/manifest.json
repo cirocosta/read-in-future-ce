@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "Read In Future",
+    "version": "0.0.0.1",
+    "author": "Ciro S. Costa",
+    "description": "A simple way of adding URLs or simple notes for
+        future seeing",
+    "icons": {
+        "16": "media/icons/icon16.png",
+        "48": "media/icons/icon48.png",
+        "128": "media/icons/icon128.png"
+    },
+    "permissions": [
+        "tabs", "activeTab"
+    ],
+    "offline_enabled": true,
+    "background": {
+        "scripts": ["build/js/event_page.min.js"],
+        "persistent": false
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "media/icons/icon19.png",
+            "38": "media/icons/icon38.png"
+        },
+        "default_title": "Read in Future",
+        "default_popup": "popup.html"
+    },
+    "options_page": "options.html"
+}

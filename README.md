@@ -11,6 +11,7 @@ A simple way of adding URLs or simple notes for seeing in the future.
 This is the Chrome Extension of the whole package (WebApp, Extension, Android).
 
 
+
 What it does?
 ----
 Lets you add the current page plus an comment (optional) for further reading

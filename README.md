@@ -11,6 +11,7 @@ A simple way of adding URLs or simple notes for seeing in the future.
 This is the Chrome Extension of the whole package (WebApp, Extension, Android).
 
 
+
 What it does?
 ----
 Lets you add the current page plus an comment (optional) for further reading
@@ -39,10 +40,9 @@ bar.
 
 ---------
 
-For the full development environment it will also be required to install NodeJS
-and then run `npm install` for getting all of the dependencies.
-
-
+For the full development environment it will also be required to install NodeJS and then run `npm install` for getting all of the dependencies.
+It is also important to run `$ grunt` for building the minified files and
+linting the JS.
 
 
 Considerations

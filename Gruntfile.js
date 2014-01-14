@@ -48,11 +48,15 @@
  
     grunt.initConfig(gruntConfig);
  
-    // carregando plugins
+    /**
+     * Inicializacao dos Plugins
+     */
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    // tarefas
+    /**
+     * Registro de Tarefas
+     */
     grunt.registerTask('default', ['cssmin','jshint','uglify']);
 };

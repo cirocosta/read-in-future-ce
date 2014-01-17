@@ -42,7 +42,7 @@
         },
 
         jshint: {
-            all: ['extension/**/*.js']
+            all: ['extension/js/*.js']
         }
     };
  
@@ -58,5 +58,5 @@
     /**
      * Registro de Tarefas
      */
-    grunt.registerTask('default', ['cssmin','jshint','uglify']);
+    grunt.registerTask('default', ['jshint','cssmin','uglify']);
 };

@@ -1,12 +1,14 @@
-#current_title{
+.current_title {
     color: rgb(68, 68, 68);
     font-weight: bold;
 }
-#current_link{
+
+.current_link {
     color: rgb(85, 147, 204);
     line-height: 0.9;
 }
-.a_button{
+
+.a_button {
     border: 1px solid rgb(223, 223, 223);
     padding: 5px;
     border-radius: 2px;
@@ -15,19 +17,26 @@
     background: rgb(248, 242, 242);
     box-shadow: 0 1px rgb(209, 205, 205);
 }
-.a_button:hover{
+
+.a_button:hover {
     background: #fff;
 }
-.a_button:active{
+
+.a_button:active {
     background: rgb(219, 219, 219);
-    box-shadow: inset 0px -1px rgb(207, 203, 203);
+    box-shadow: inset 0 -1px rgb(207, 203, 203);
 }
-#i_description{
+
+.i_description {
     margin-bottom: 15px;
     border: 1px solid rgb(218, 218, 218);
     font-size: 16px;
     border-radius: 2px;
     padding: 4px;
     width: 400px;
+}
+
+.i_description:focus {
+    border: 1px solid rgb(0, 112, 255);
     outline: none;
 }

@@ -40,10 +40,29 @@ bar.
 
 ---------
 
-For the full development environment it will also be required to install NodeJS and then run `npm install` for getting all of the dependencies.
-It is also important to run `$ grunt` for building the minified files and
-linting the JS.
+For the full development environment it will also be required to install NodeJS.
 
+-	Install NodeJS 0.4+	
+
+-	Install the packages that the project depends on:
+
+```
+$ npm install
+```
+
+-	Run the task runner to build the minified files that the htmls depends on:
+
+```
+$ grunt build
+```
+
+-	Check if the linting is ok and test passes:
+
+```
+$  npm test
+``` 
+
+*ps: the project lacks of unit tests and ui tests yet :( I'm aiming to remake a lot of stuff doing TDD*
 
 Considerations
 ----
@@ -54,21 +73,11 @@ runs on [NodeJS](http://nodejs.org/) which is also awesome.
 
 * As i'll say at *contributing*, this project is about learning. That's why
 i tried to use some cool stuff that are being used in big projects. These cool
-stuff that i refer to are: **compass** (sass precompiler), **grunt**(automation
+stuff that i refer to are: **grunt**(automation
 with tasks) and **nodejs**(for the [server-side](http://github.com/cirocosta) 
 and also instalation of packages).
 
 * Yes, this will be heavily commented
-
-*TODO//*
-
-- The IDs generated here are 100% time-dependent, that is, is generated entirely
-based on the time of the system in milliseconds. This is being used for the
-extension just to distinguish in a reasonable way the objects that we create and
-to have an easy way to get a single of them in the database. When the object
-is sent to the webserver and put there, we receive the ID that is generated
-by the webserver and then replace here in the database so that at the end of the
-sync we only have genuine IDs non-time-dependant for the objects.
 
 
 Contributing

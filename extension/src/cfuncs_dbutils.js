@@ -60,26 +60,21 @@ DatabaseTable.prototype.deleteObject = function(object_to_delete){
 };
 
 DatabaseTable.prototype.getById = function(id,id_field){
-    try{
-        if(id_field === 'undefined'){
-            id_field = 'id';
-        }
-        for(var i in this.parsed_table){
-            var curr_elem = this.parsed_table[i];
-            if(curr_elem[id_field].toString() === id.toString()){
-                return curr_elem;
-            }
-        }
-        return null;
-    } catch (err){
-        throw "An error was handled while getting the element from its id." + 
-            err;
+    if(typeof(id_field) === 'undefined'){
+        id_field = 'id';
     }
+    for(var i in this.parsed_table){
+        var curr_elem = this.parsed_table[i];
+        if(curr_elem[id_field].toString() === id.toString()){
+            return curr_elem;
+        }
+    }
+    return null;
 };
 
 DatabaseTable.prototype.getObjectPosition = function(object){
     if(this.parsed_table){
-        for(var i in this.parsed_table){
+        for(var i = 0; i < this.parsed_table.length; i++){
             if(this.parsed_table[i] === object){
                 return i;
             }

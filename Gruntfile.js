@@ -12,7 +12,7 @@
                 files: [{
                     expand: true,
                     cwd: 'extension/src',
-                    src: '**/*.src',
+                    src: '**/*.js',
                     dest: 'extension/build/js',
                     ext: '.min.js'
                 }]
@@ -39,6 +39,15 @@
             }
         },
 
+        csslint: {
+            options: {
+                csslintrc: '.csslintrc',
+            },
+            strict: {
+                src: ['extension/css/**/*.css']
+            }
+        },
+
         jasmine: {
             src: 'extension/src/cfuncs_dbutils.js',
             options: {
@@ -53,8 +62,9 @@
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-csslint');
 
-    grunt.registerTask('generate', ['cssmin', 'uglify']);
-    grunt.registerTask('test', ['jshint', 'jasmine']);
+    grunt.registerTask('build', ['cssmin', 'uglify']);
+    grunt.registerTask('test', ['jshint', 'csslint', 'jasmine']);
     grunt.registerTask('default', ['test']);
 };

@@ -7,7 +7,7 @@ body{
     line-height: 1;
     border: 1px solid rgb(235, 235, 235);
     border-radius: 2px;
-    padding: 0 2px 0px 4px;
+    padding: 0 2px 0 4px;
 }
 
 .db_element:hover {
@@ -26,12 +26,13 @@ body{
 .p_separacao, .p_editar, .p_excluir{
     float: right;
     font-size: 14px;
+    color: rgb(102, 152, 201); /* fallback color */
     color: rgba(68, 120, 185,0.6);
     transition: color 0.2s;
 }
 
 .p_separacao {
-    color: rgba(0,0,0,0);
+    opacity: 0;
 }
 
 .p_editar:hover, .p_excluir:hover{

@@ -1,18 +1,6 @@
-/** 
- * Here are defined all the tasks to be execute with GruntJS.
- */
-
-
-/**
- * Importing the GruntJS module
- */
-
  module.exports = function(grunt) {
     'use strict';
  
-    /**
-     * Project configuration
-     */
     var gruntConfig = {
         pkg: grunt.file.readJSON('package.json'),
         
@@ -23,8 +11,8 @@
             my_target: {
                 files: [{
                     expand: true,
-                    cwd: 'extension/js',
-                    src: '**/*.js',
+                    cwd: 'extension/src',
+                    src: '**/*.src',
                     dest: 'extension/build/js',
                     ext: '.min.js'
                 }]
@@ -42,21 +30,31 @@
         },
 
         jshint: {
-            all: ['extension/**/*.js']
+            all: [
+                'Gruntfile.js',
+                'extension/src/*.js'
+            ],
+            options: {
+                jshintrc: '.jshintrc'
+            }
+        },
+
+        jasmine: {
+            src: 'extension/src/cfuncs_dbutils.js',
+            options: {
+                specs: "extension/spec/**/*.js"
+            }
         }
     };
  
     grunt.initConfig(gruntConfig);
  
-    /**
-     * Inicializacao dos Plugins
-     */
+    grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    /**
-     * Registro de Tarefas
-     */
-    grunt.registerTask('default', ['cssmin','jshint','uglify']);
+    grunt.registerTask('generate', ['cssmin', 'uglify']);
+    grunt.registerTask('test', ['jshint', 'jasmine']);
+    grunt.registerTask('default', ['test']);
 };

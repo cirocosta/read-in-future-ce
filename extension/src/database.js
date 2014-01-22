@@ -51,15 +51,28 @@ function fn_exclui(){
 
 function fn_edita(){ }
 
+/**
+ * Given a date in unix time returns a convenient string representation
+ * params:
+ *     data -- int unix time
+ */
+
+function format_date(data){
+    var date = new Date(data);
+    return date.getDate() + "/" + 
+            date.getMonth()+1 + "/" +
+            date.getFullYear() + " " +
+            date.getHours() + ":" +
+            date.getMinutes();
+}
 
 /**
  * Appends some 'future_link' elements to the screen.  
- * 
- * -- procudural
  */
 
 function create_and_append_dbelement(title, data, url, description, item_id, 
                                     container){
+
     var db_element = document.createElement("div");
     db_element.setAttribute("class","db_element");
     db_element.setAttribute("id",item_id);
@@ -89,8 +102,9 @@ function populate_window(){
         var future_links = tableFutureLinks.parsed_table;
         for(var i=0; i<future_links.length; i++){
             var future_link = future_links[i];
+            var formated_date = format_date(future_link.data);
             var inserted = create_and_append_dbelement(future_link.title,
-                                                        future_link.data,
+                                                        formated_date,
                                                         future_link.url,
                                                         future_link.description,
                                                         future_link.item_id,

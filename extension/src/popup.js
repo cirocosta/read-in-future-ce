@@ -18,7 +18,7 @@ chrome.tabs.query({'active': true}, function(tabs){
 });
 
 /**
- * OnClick method for the SAve Button.
+ * OnClick method for the Save Button.
  * It will generate an Object for the current tab page
  * and then save it to the localStorage database
  */
@@ -26,10 +26,16 @@ chrome.tabs.query({'active': true}, function(tabs){
 save_btn.onclick = function(){
     var description = document.getElementById('i_description').value;
     var data = new Date();
+    var date_formated = data.getDate() + "/" + 
+                        data.getMonth()+1 + "/" +
+                        data.getFullYear() + " " +
+                        data.getHours() + ":" +
+                        data.getMinutes();
+
 
     var future_link = {
         "url": current_url,
-        "data": data,
+        "data": date_formated,
         "title": current_title,
         "description": description,
         "item_id": data.getTime()

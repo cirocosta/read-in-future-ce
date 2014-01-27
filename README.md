@@ -29,8 +29,8 @@ How to run it?
 ----
 There's minimum headache for running it from the repo. The steps are:
 
-1. Go to chrome://extensions 
-2. Turn Developer Mode on
+1. Go to `chrome://extensions` 
+2. Turn Developer Mode **on**
 3. Click Load Unpacked extension and select the directory
 
 *as described [here](http://developer.chrome.com/extensions/getstarted.html).*

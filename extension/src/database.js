@@ -32,7 +32,6 @@ TableFutureLinks.prototype.checkIfPageAlreadySaved = function(url){
 
 var tableFutureLinks = new TableFutureLinks();
 
-
 /**
  * onClick method of the Database.html db_element items.  
  */
@@ -81,29 +80,35 @@ function create_and_append_dbelement(title, data, url, description, item_id,
  * Executes the functions that are necessary for populating the window
  * passing them the params they require. 
  * 
- * -- procudural  
+ * -- procudural (it is being called only at the first time)  
  */
 
 function populate_window(){
+    var HTML_EMPTY_STATE = '<div class="db_element_empty">' +
+                                '<p>No links were saved yet :(</p>' +
+                            '</div>';
+
     if(tableFutureLinks.parsed_table){
         var future_links = tableFutureLinks.parsed_table;
-        for(var i=0; i<future_links.length; i++){
-            var future_link = future_links[i];
-            var inserted = create_and_append_dbelement(future_link.title,
+        if(!future_links.length){
+            d_elements.innerHTML += HTML_EMPTY_STATE;    
+        } else {        
+            for(var i=0; i<future_links.length; i++){
+                var future_link = future_links[i];
+                var inserted = create_and_append_dbelement(future_link.title,
                                                         future_link.data,
                                                         future_link.url,
                                                         future_link.description,
                                                         future_link.item_id,
                                                         d_elements);
-            var children = inserted.childNodes;
+                var children = inserted.childNodes;
 
-            children[0].onclick = fn_edita;
-            children[2].onclick = fn_exclui;
+                children[0].onclick = fn_edita;
+                children[2].onclick = fn_exclui;
+            }
         }
     } else {
-        d_elements.innerHTML += '<div class="db_element_empty">' +
-                                    '<p>No links were saved yet :(</p>' +
-                                '</div>';
+        d_elements.innerHTML += HTML_EMPTY_STATE;
     }
 }
 

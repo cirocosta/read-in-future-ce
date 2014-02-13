@@ -27,7 +27,7 @@
     box-shadow: inset 0 -1px rgb(207, 203, 203);
 }
 
-.i_description {
+input {
     margin-bottom: 15px;
     border: 1px solid rgb(218, 218, 218);
     font-size: 16px;
@@ -36,7 +36,7 @@
     width: 400px;
 }
 
-.i_description:focus {
+input:focus {
     border: 1px solid rgb(0, 112, 255);
     outline: none;
 }

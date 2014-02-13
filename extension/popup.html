@@ -2,18 +2,41 @@
 <html>
 <head>
     <title>Read in Future</title>
+    <link rel="stylesheet" type="text/css" href="build/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="build/css/base.min.css">
     <link rel="stylesheet" type="text/css" href="build/css/popup.min.css">
+    <style type="text/css">
+    body {
+      padding: 10px;
+    }
+
+    #i_description {
+      margin-top: 10px;
+    }
+
+    #d_buttons { 
+      margin-bottom: 10px;
+    }
+
+    </style>
 </head>
 <body>
 
-  <p class="current_title" id="current_title">Loading ...</p>
-  <p class="current_link" id="current_link">Loading ...</p>
+  <h4 class="current_title" id="current_title">Loading ...</h4>
+  <h4 class="current_link" id="current_link">Loading ...</h4>
   <input type="text" placeholder="Description" id="i_description" class="i_description">
+  <input type="text" placeholder="Category" id="i_category" class="typeahead" />
   <br>
-  <small><a class="a_button" id="a_save">Save</a> |
-  <a class="a_button" id="a_database">Database</a></small>
 
+  <div class="pull-right" id="d_buttons">
+    <small>
+      <a class="a_button btn" id="a_database">Database</a>
+      <a class="a_button btn" id="a_save">Save</a>
+    </small>
+  </div>
+
+  <script type="text/javascript" src="build/js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="build/js/typeahead.bundle.min.js"></script>
   <script type="text/javascript" src="build/js/cfuncs_dbutils.min.js"></script>
   <script type="text/javascript" src="build/js/popup.min.js"></script>
 </body>
